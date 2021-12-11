@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*
+ * The color palette
+ */
+:root{
+    --font-color:hsl(0, 0%, 100%);
+    --primary:hsl(235, 14%, 36%);
+    --primary-light: hsla(235, 14%, 36%, 50%);
+    --primary-lighter: hsla(235, 14%, 36%, 100%);
+    --primary-medium: hsla(233, 19%, 8%, 90%);
+    --primary-dark: hsla(233, 19%, 8%, 95%);
+    --secondary:hsla(236, 12%, 49%, 30%);
+}
+
+.text-danger
+{
+    color: rgb(223, 49, 49);
+}
+
+.text-success
+{
+    color: rgb(58, 201, 58);
+}
+
+.text-bold
+{
+    font-weight: 500;
+}
+
+.font-size-default
+{
+    font-size: .1vmax;
+}

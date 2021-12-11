@@ -1,0 +1,45 @@
+.container{
+    color: white;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+}
+
+.card-container{
+
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card{
+    display: flex;
+    flex-flow: column;
+    background-color: var(--secondary);
+    color: white;
+    flex-shrink: 1;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header
+{
+    font-size: .5vmax;
+}
+
+.img-container{
+    width: 100%;
+}
+
+.img-container img{
+
+    max-width: 70%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container .card:hover{
+    background-color: var(--primary-lighter);
+}

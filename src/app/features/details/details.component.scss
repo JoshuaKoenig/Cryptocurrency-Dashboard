@@ -1,0 +1,58 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 6rem 2rem 6rem;
+    background: linear-gradient(90deg, var(--primary-medium) 0%, var(--primary-dark) 100%);
+    color: var(--font-color);
+}
+
+.header
+{
+    display: flex;
+    flex-direction: row;
+    gap: .3rem;
+}
+
+.chart-wrapper{
+    padding: 2rem;
+    background-color: var(--primary-light);
+}
+
+.chart-container
+{   
+    display: flex;
+    gap: 1rem;
+}
+
+.details-container
+{
+    padding: 2rem;
+    background-color: var(--primary-light);
+}
+
+.details-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;;
+}
+
+.card{
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem;
+    background-color: var(--secondary);
+    color: var(--font-color);
+}
+
+img
+{
+    height: 30px;
+    width:  30px;
+}

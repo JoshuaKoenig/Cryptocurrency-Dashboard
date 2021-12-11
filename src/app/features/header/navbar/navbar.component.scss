@@ -1,0 +1,36 @@
+.spacer {
+    flex: .95 .95 auto;
+  }
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    background-color: hsl(0, 0%, 10%);
+    color: white;
+}
+
+button{
+  background-color: hsl(0, 0%, 10%);
+  border: none;
+  border-radius: 3px;
+  padding: 1vmin;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  padding: 1vmin;
+}
+
+a:hover{
+  background-color: hsl(0, 0%, 35%);
+}
+
+button:hover{
+  background-color: hsl(0, 0%, 35%);
+}
+
+.active{
+  font-style: italic;
+}

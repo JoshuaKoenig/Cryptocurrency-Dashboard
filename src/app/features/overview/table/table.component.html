@@ -1,0 +1,193 @@
+<div class="container">
+  <table mat-table [dataSource]="objectKeys(tableRows)" class="table-style">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Name</th>
+      <td
+        class="data"
+        mat-cell
+        *matCellDef="let element"
+        [routerLink]="['/coins', tableRows[element]?.coinShort]"
+      >
+        {{ tableRows[element]?.coinNameFull }}
+      </td>
+    </ng-container>
+
+    <!-- img Column -->
+    <ng-container matColumnDef="img">
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Symbol</th>
+      <td
+        class="data"
+        mat-cell
+        *matCellDef="let element"
+        [routerLink]="['/coins', tableRows[element]?.coinShort]"
+      >
+        <img src="{{ tableRows[element]?.imgSrc }}" />
+      </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container
+      matColumnDef="price"
+      *ngIf="displayedColumns.includes('price')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Price</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.price }}
+      </td>
+    </ng-container>
+
+    <!-- Last Change Column -->
+    <ng-container
+      matColumnDef="lastChange"
+      *ngIf="displayedColumns.includes('lastChange')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Last Update</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.lastUpdate }}
+      </td>
+    </ng-container>
+
+    <!-- Market Cap -->
+    <ng-container
+      matColumnDef="mktCap"
+      *ngIf="displayedColumns.includes('mktCap')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Market Cap</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.marketCap }}
+      </td>
+    </ng-container>
+
+    <!-- Change Hour -->
+    <ng-container
+      matColumnDef="changeHour"
+      *ngIf="displayedColumns.includes('changeHour')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Change Hour</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.changeHour }}
+      </td>
+    </ng-container>
+
+    <!-- Change Day -->
+    <ng-container
+      matColumnDef="changeDay"
+      *ngIf="displayedColumns.includes('changeDay')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Change Day</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.changeDay }}
+      </td>
+    </ng-container>
+
+    <!-- Change 24 Hour -->
+    <ng-container
+      matColumnDef="change24Hour"
+      *ngIf="displayedColumns.includes('change24Hour')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>
+        Change 24 Hour
+      </th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.change24Hour }}
+      </td>
+    </ng-container>
+
+    <!-- High Hour -->
+    <ng-container
+      matColumnDef="highHour"
+      *ngIf="displayedColumns.includes('highHour')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>High Hour</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.highHourPrice }}
+      </td>
+    </ng-container>
+
+    <!-- High Day -->
+    <ng-container
+      matColumnDef="highDay"
+      *ngIf="displayedColumns.includes('highDay')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>High Day</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.highDayPrice }}
+      </td>
+    </ng-container>
+
+    <!-- Low Hour -->
+    <ng-container
+      matColumnDef="lowHour"
+      *ngIf="displayedColumns.includes('lowHour')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Low Hour</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.lowHourPrice }}
+      </td>
+    </ng-container>
+
+    <!-- Low Day -->
+    <ng-container
+      matColumnDef="lowDay"
+      *ngIf="displayedColumns.includes('lowDay')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Low Day</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.lowDayPrice }}
+      </td>
+    </ng-container>
+
+    <!-- Volume 24 Hour -->
+    <ng-container
+      matColumnDef="volume24Hour"
+      *ngIf="displayedColumns.includes('volume24Hour')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>
+        Volume 24 Hour
+      </th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.volume24Hour }}
+      </td>
+    </ng-container>
+
+    <!-- Volume Hour -->
+    <ng-container
+      matColumnDef="volumeHour"
+      *ngIf="displayedColumns.includes('volumeHour')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Volume Hour</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.volumeHour }}
+      </td>
+    </ng-container>
+
+    <!-- Volume Day -->
+    <ng-container
+      matColumnDef="volumeDay"
+      *ngIf="displayedColumns.includes('volumeDay')"
+    >
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Volume Day</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        {{ tableRows[element]?.volumeDay }}
+      </td>
+    </ng-container>
+
+    <!-- add Column -->
+    <ng-container matColumnDef="add">
+      <th class="meta-data" mat-header-cell *matHeaderCellDef>Dashboard</th>
+      <td class="data" mat-cell *matCellDef="let element">
+        <mat-icon
+          (click)="addToDashboard(tableRows[element]?.coinShort)"
+          [ngClass]="{
+            disable: coinAlreadyInDashboard(tableRows[element]?.coinShort)
+          }"
+          >add_circle</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,135 @@
+<div class="container">
+  <div class="header">
+    <img src="{{ coin.image }}" />
+    <h1>
+      <span>{{ coin.fullName }}</span>
+    </h1>
+  </div>
+
+  <div class="chart-wrapper">
+    <h2>Price Charts</h2>
+    <div class="chart-container">
+      <mat-card class="card">
+        <mat-card-content>
+          <app-charts
+            [chartDataSet]="chartDataSet"
+            [chartLabels]="lineChartLabels"
+            [chartOptions]="lineChartOptions"
+            [chartLegend]="lineChartLegend"
+            [chartType]="lineChartType"
+          ></app-charts>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-content>
+          <app-charts
+            [chartDataSet]="chartDataSet"
+            [chartLabels]="lineChartLabels"
+            [chartOptions]="lineChartOptions"
+            [chartLegend]="lineChartLegend"
+            [chartType]="barChartType"
+          ></app-charts>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="details-container">
+    <h2>Details</h2>
+
+    <div class="details-grid">
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Price </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+          {{ coin.currentPrice }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Market Cap </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.marketCap }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Change Day </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="card-content">
+          {{ coin.changeDay }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Change Hour </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.changeHour }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> High Day </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.highDay }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> High Hour </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.highHour }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Low Day </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.lowDay }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Low Hour </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.lowHour }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Volume Day </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.volumeDay }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title> Volume Hour </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content"
+          >{{ coin.volumeHour }}
+        </mat-card-content>
+      </mat-card>
+      
+    </div>
+  </div>
+</div>

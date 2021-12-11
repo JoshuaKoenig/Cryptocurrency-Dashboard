@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="card-container">
+
+    <mat-card
+      class="card"
+      (click)="sendPriceColumns()"
+      [ngStyle]="{ 'background-color': active === 'price' ? 'var(--primary-lighter)' : '' }">
+      <mat-card-header class="card-header">
+        <mat-card-title style="font-size:1.2vmax;"> PRICES </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card
+      class="card"
+      (click)="sendChangeColumns()"
+      [ngStyle]="{ 'background-color': active === 'change' ? 'var(--primary-lighter)' : '' }">
+      <mat-card-header>
+        <mat-card-title style="font-size:1.2vmax;"> CHANGES </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card
+      class="card"
+      (click)="sendHighLowColumns()"
+      [ngStyle]="{ 'background-color': active === 'highLow' ? 'var(--primary-lighter)' : '' }">
+      <mat-card-header>
+        <mat-card-title style="font-size:1.2vmax;"> HIGHS & LOWS </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card
+      class="card"
+      (click)="sendVolumeColumns()"
+      [ngStyle]="{ 'background-color': active === 'volume' ? 'var(--primary-lighter)' : '' }">
+      <mat-card-header>
+        <mat-card-title style="font-size:1.2vmax;"> VOLUME </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+
+  </div>
+</div>

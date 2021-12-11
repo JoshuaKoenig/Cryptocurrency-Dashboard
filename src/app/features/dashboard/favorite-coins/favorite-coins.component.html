@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="header">
+    <div class="card-header">
+      <mat-icon class="icon-star">star</mat-icon>
+      <h1>Favorite coins </h1>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <mat-icon class="icon-menu" (click)="changeMenu()">menu</mat-icon>
+      <div *ngIf="isOpen" class="navbar" 
+      [ngClass]="{'dropdown-animation-fadeIn': isMenuOpen, 'dropdown-animation-fadeOut': !isMenuOpen}">
+        <mat-card class="mat-button">
+          <mat-card-header>
+            <mat-card-title>
+              <div class="icon-holder">
+                <span *ngFor="let card of cardArray">
+                  <img
+                    src="{{ card.img }}"
+                    [routerLink]="['/coins', card.coinName]"
+                  />
+                </span>
+              </div>
+            </mat-card-title>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="card-wrapper" *ngFor="let card of cardArray">
+    <div class="card-container" [routerLink]="['/coins', card.coinName]">
+      <div class="header">
+        <img src="{{ card.img }}" />
+        <h2>{{ card.fullName }}</h2>
+        <h3>
+          <i>( {{ card.coinName }} )</i>
+        </h3>
+        <mat-icon class="icon-delete" (click)="delete(card.coinName)">delete_forever</mat-icon>
+      </div>
+      <div class="content">
+        <mat-card class="card">
+          <mat-card-header>
+          </mat-card-header>
+          <mat-card-content>
+            <app-charts
+              class="chart"
+              [chartDataSet]="card.chartDataSet"
+              [chartLabels]="lineChartLabels"
+              [chartOptions]="lineChartOptions"
+              [chartColors]="lineChartColors"
+              [chartLegend]="lineChartLegend"
+              [chartType]="lineChartType"
+            ></app-charts>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="card">
+          <mat-card-header>
+          </mat-card-header>
+          <mat-card-content class="card-content">
+            <div class="price-container">
+              <div class="price-content text-bold">
+                <mat-icon class="icon-euro">euro_symbol</mat-icon>
+                <p>{{ card.price}}</p>
+              </div>
+              <div class="price-content">
+                <mat-icon *ngIf="!card.changeDay.includes('-')" class="text-success">trending_up</mat-icon>
+                <mat-icon *ngIf="card.changeDay.includes('-')" class="text-danger">trending_down</mat-icon>
+                <p>{{ card.changeDay }}</p>
+              </div>
+              <div class="price-content">
+                <mat-icon class="icon-info">info</mat-icon>
+                <p>{{card.changesInPercent | number:'1.2-2'}} %</p>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+<!--         <mat-card class="card">
+          <mat-card-content class="card-content">
+            {{ card.mktcap }}
+          </mat-card-content>
+        </mat-card> -->
+      </div>
+    </div>
+  </div>
+</div>

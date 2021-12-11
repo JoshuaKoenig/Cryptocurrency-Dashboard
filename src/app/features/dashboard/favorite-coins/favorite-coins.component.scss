@@ -1,0 +1,208 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-top: 2rem;
+}
+
+.navbar-container
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding-right: .5rem;
+    gap: .5rem;
+}
+
+.icon-menu
+{
+    margin-left: auto;
+    transform: scale(1.5);
+}
+
+.navbar
+{
+    display: flex;
+    flex-direction: row;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    transition: all 3s ease;
+}
+
+.icon-holder
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.card-wrapper
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    align-items: center;
+}
+
+.header > img{
+    padding-bottom: 1rem;
+}
+
+.mat-button
+{
+    background-color: var(--secondary);
+    border: none;
+    color: white;
+    width: fit-content;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.mat-button:hover
+{
+    background-color: var(--primary-lighter);
+}
+
+mat-icon{
+    margin-right: .5rem;
+    margin-left: auto ;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-light);
+    padding: 1rem;
+    margin: .5rem;
+    
+}
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(1rem, auto);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-color: var(--secondary);
+    color: var(--font-color);
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.card-header
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.chart
+{
+    max-width: 1vmin;
+}
+
+.card-content
+{
+    display: flex;
+    flex-direction: row;
+    font-size: 3vmin;
+    margin-left: 1rem;
+    padding: 1rem 0 0 0;
+}
+
+.price-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3vmin;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.5vmax;
+    width: 100%;
+}
+
+.price-content
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1vmin;
+}
+
+.dropdown-animation-fadeIn
+{
+    animation: growDown 250ms ease-in-out forwards;
+}
+
+.dropdown-animation-fadeOut
+{
+    animation: blurDown 250ms ease-in-out forwards;
+}
+
+@keyframes growDown
+{
+    0% {
+        transform: scaleY(0);
+    }
+    80% {
+        transform: scaleY(1.2);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes blurDown
+{
+    0% {
+        transform: scaleY(1.2);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+.icon-delete:hover
+{
+    color: hsl(0, 100%, 55%);
+}
+
+.icon-star
+{
+    margin: 3px 5px 0 0;
+    color: yellow;
+    padding: 0;
+}
+
+.icon-info
+{
+    color: hsl(207, 98%, 60%);
+}
+
+.icon-euro
+{
+    color: rgb(255, 255, 100);
+}
+
+.icon-menu:hover
+{
+    background-color: hsl(0, 0%, 30%);
+}
+
+.arrow-icon
+{
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
