@@ -30,16 +30,18 @@
 
   <!-- Cards -->
   <div class="card-wrapper" *ngFor="let card of cardArray">
-    <div class="card-container" [routerLink]="['/coins', card.coinName]">
-      <div class="header">
-        <img src="{{ card.img }}" />
-        <h2>{{ card.fullName }}</h2>
-        <h3>
-          <i>( {{ card.coinName }} )</i>
-        </h3>
+    <div class="card-container">
+      <div class="header-container">
+        <div class="header" [routerLink]="['/coins', card.coinName]">
+          <img src="{{ card.img }}"/>
+          <h2>{{ card.fullName }}</h2>
+          <h3>
+            <i>( {{ card.coinName }} )</i>
+          </h3>
+        </div>
         <mat-icon class="icon-delete" (click)="delete(card.coinName)">delete_forever</mat-icon>
       </div>
-      <div class="content">
+      <div class="content" [routerLink]="['/coins', card.coinName]">
         <mat-card class="card">
           <mat-card-header>
           </mat-card-header>
@@ -76,11 +78,6 @@
             </div>
           </mat-card-content>
         </mat-card>
-<!--         <mat-card class="card">
-          <mat-card-content class="card-content">
-            {{ card.mktcap }}
-          </mat-card-content>
-        </mat-card> -->
       </div>
     </div>
   </div>

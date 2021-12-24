@@ -43,7 +43,7 @@ export class CardsService {
   /**
    * Removes the current coin from dashboard
    */
-  public removeCard(coin: string): void
+  public removeCard(coin: string)
   {
     this.myCards = this.cardString.split(',');
 
@@ -56,5 +56,6 @@ export class CardsService {
     
    this.cardString = this.myCards.toString();
    this.localStorage.set('KEY_FAVORITE_COINS_03', this.cardString);
+   return of(this.myCards);
   }
 }

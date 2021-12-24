@@ -1,9 +1,12 @@
 <div class="container">
-  <div class="header">
-    <img src="{{ coin.image }}" />
-    <h1>
-      <span>{{ coin.fullName }}</span>
-    </h1>
+  <div class="header-container">
+    <div class="header">
+      <img src="{{ coin.image }}" />
+      <h1>
+        <span>{{ coin.fullName }}</span>
+      </h1>
+    </div>
+    <hr>
   </div>
 
   <div class="chart-wrapper">
@@ -129,7 +132,6 @@
           >{{ coin.volumeHour }}
         </mat-card-content>
       </mat-card>
-      
     </div>
   </div>
 </div>

@@ -14,6 +14,7 @@ import { coinPromise } from './../../../shared/Interfaces/coin-promise';
   styleUrls: ['./favorite-coins.component.scss'],
 })
 export class FavoriteCoinsComponent implements OnInit {
+
   /**
    * The card array
    */
@@ -101,14 +102,16 @@ export class FavoriteCoinsComponent implements OnInit {
   /**
    * Initialize component
    */
-  public ngOnInit(): void {
+  public ngOnInit(): void
+  {
     this.fillCardData();
   }
 
   /**
    * Fills the card data
    */
-  public fillCardData(): void {
+  public fillCardData(): void
+  {
     this.getCardData();
     this.promiseObject.map((item) => {
       Promise.all(item.promises).then((data) => {
@@ -130,9 +133,11 @@ export class FavoriteCoinsComponent implements OnInit {
    * Deletes the coin from dashboard
    * @param {string} coinName the given coin name
    */
-  public delete(coinName: string): void {
-    this.cardArray = [];
+  public delete(coinName: string): void 
+  {
     this.cardService.removeCard(coinName);
+    this.cardArray = [];
+    this.promiseObject = [];
     this.fillCardData();
   }
 
@@ -140,14 +145,16 @@ export class FavoriteCoinsComponent implements OnInit {
    * Changes the menus status with delay for the animation;
    * True if it is open; otherwise false
    */
-  public changeMenu(): void {
+  public changeMenu(): void
+  {
     this.isMenuOpen = !this.isMenuOpen;
     setTimeout(() => {
       this.isOpen = !this.isOpen;
     }, 200);
   }
 
-  private getCardData(): void {
+  private getCardData(): void
+  {
     let promiseArray: Promise<any>[] = [];
     this.cardService.getCards().subscribe((card) => {
       card.map((coinName) => 
